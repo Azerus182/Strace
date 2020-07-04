@@ -84,8 +84,8 @@ static void display_tree_arg_b(struct user_regs_struct *regs)
         printf("%p, 0x%ui, 0x%llu)\n", (void *)regs->rdi,
         (unsigned int)regs->rsi, ((unsigned long long)regs->rdx & 0xFFFFFFFF));
     if (regs->rax == __NR_lseek)
-        printf("%ui, 0x%ld, 0x%ui)\n", (unsigned int)regs->rdi, (off_t)regs->rsi,
-        (unsigned int)regs->rdx);
+        printf("%ui, 0x%ld, 0x%ui)\n", (unsigned int)regs->rdi,
+        (off_t)regs->rsi, (unsigned int)regs->rdx);
     if (regs->rax == __NR_execve)
         printf("%p, %p, %p)\n", (void *)regs->rdi, (void *)regs->rsi,
         (void *)regs->rdx);
