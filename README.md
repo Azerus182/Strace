@@ -19,6 +19,7 @@ Exécutez le programme avec le chemin vers votre exécutable en argument :
 **Résultat:**
 
 ```
+$ strace /usr/bin/ls
 brk(0x0)
 mmap(0x0, 0x8192, 0x3, 0x34, 0x4294967295, 0x0)
 access(0x7fd9217463e0, 0x4)
