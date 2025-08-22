@@ -14,7 +14,7 @@ Utilisez la commande suivante dans le répertoire du projet :
 
 Exécutez le programme avec le chemin vers votre exécutable en argument :
 
-*./capture [chemin]*
+*./strace [chemin]*
 
 **Résultat:**
 
