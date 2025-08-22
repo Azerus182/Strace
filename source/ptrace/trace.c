@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** NWP_myteams_2019
 ** File description:
-** CPP Source file
+** C Source file
 */
 
 #include <errno.h>
@@ -18,6 +18,25 @@
 #include "ptrace/macro.h"
 #include "syscall_name/display.h"
 #include "syscall_name/print_name.h"
+
+static int is_returning(pid_t pid, struct user_regs_struct *regs)
+{
+    long ret;
+
+    do {
+        ret = ptrace(PTRACE_PEEKTEXT, pid, regs->rip, 0);
+        if (ret == -1 && errno) {
+            return (0);
+        }
+
+
+    } while((ret & 0xFF) != 0xC3 && (ret & 0xFF) != 0xCB);
+    if ((ret & 0xFF) == 0xC3
+        || (ret & 0xFF) == 0xCB) {
+        return (1);
+    }
+    return (0);
+}
 
 static int is_making_syscall(pid_t pid, struct user_regs_struct *regs)
 {

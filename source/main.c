@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** NWP_myteams_2019
 ** File description:
-** CPP Source file
+** C Source file
 */
 
 #include <unistd.h>
